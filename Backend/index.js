@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:5173', // Allow your frontend's URL
+  origin: 'https://blog-app-frontend-pi-gray.vercel.app', // Allow your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'token'], // Allow token header
 };
