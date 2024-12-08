@@ -5,8 +5,8 @@ const TeamSection = ({ team = [] }) => {
     <section className="container mx-auto py-8 px-4">
       <h3 className="text-2xl sm:text-3xl font-bold mb-6">Our Team</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {team.map((member) => (
-          <div key={member.id} className="border rounded-lg overflow-hidden shadow-md text-center">
+        {team.map((member, index) => (
+          <div key={index} className="border rounded-lg overflow-hidden shadow-md text-center">
             <img
               src={member.imageUrl}
               alt={member.name}

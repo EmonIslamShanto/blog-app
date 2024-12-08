@@ -20,11 +20,10 @@ const Login = () => {
     try {
       // Call the login API function
       const userInfo = await loginUser({ email, password });
-      console.log('Login Response:', userInfo);
 
       // Check if the response contains the expected data
       if (userInfo?.token) {
-        login(userInfo); // Update AuthContext with the user data
+     // Update AuthContext with the user data
         navigate(from, { replace: true }); // Redirect to the intended page
       } else {
         setError('Invalid login response. Please try again.');

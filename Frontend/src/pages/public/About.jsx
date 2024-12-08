@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getTeamMembers } from "../../api/teamApi";
 import AboutSection from "../../components/AboutSection";
 import TeamSection from "../../components/TeamSection";
+import Loader from "../../components/Loader";
 
 
 const About = () => {
@@ -22,6 +23,8 @@ const About = () => {
 
     fetchTeam();
   }, []);
+
+  if (loading) return <Loader />;
   return (
     <>
       <AboutSection />
