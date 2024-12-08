@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
@@ -14,6 +15,15 @@ connectDB();
 
 const app = express();
 app.use(express.json());
+// CORS configuration
+const corsOptions = {
+  origin: 'http://localhost:5173', // Allow your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'token'], // Allow token header
+};
+
+// Use CORS middleware with the above options
+app.use(cors(corsOptions));
 
 // CORS middleware to allow requests from any origin
 app.use((req, res, next) => {

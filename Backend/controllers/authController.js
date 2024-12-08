@@ -43,6 +43,7 @@ export const registerUser = async (req, res) => {
 // Login a user
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   try {
     // Find the user by email
